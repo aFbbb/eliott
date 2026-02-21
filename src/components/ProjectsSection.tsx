@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import SectionReveal from "./SectionReveal";
+import ImageCarousel from "./ImageCarousel";
+import placeholderPhoto from "@/assets/placeholder-photo.jpg";
 
 interface Project {
   title: string;
@@ -9,6 +11,7 @@ interface Project {
   summary: string;
   description: string;
   tags: string[];
+  images: { src: string; alt?: string }[];
 }
 
 const projects: Project[] = [
@@ -19,6 +22,11 @@ const projects: Project[] = [
     description:
       "Projet en groupe de 4 : conception des locaux d'un navire à partir du dossier de conception et du GA. Analyse documentaire, répartition du travail, modélisation des varangues sous le bottom deck, puis aménagement du pont (IPN, Té, tôle). Vision concrète de la gestion de projet sur 3DExperience en collaboration.",
     tags: ["3DExperience", "Conception navale", "Travail collaboratif"],
+    images: [
+      { src: placeholderPhoto, alt: "Navire de recherche 1" },
+      { src: placeholderPhoto, alt: "Navire de recherche 2" },
+      { src: placeholderPhoto, alt: "Navire de recherche 3" },
+    ],
   },
   {
     title: "Dimensionnement d'une pièce de sécurité",
@@ -27,6 +35,10 @@ const projects: Project[] = [
     description:
       "Conception en binôme d'un basculeur transmettant 3 000 N de traction avec minimisation de masse. Fabrication additive SLS en polyamide 12. Analyse des propriétés matériau, simulations par éléments finis, optimisation géométrique itérative sous CATIA. Pièce finale ~85 g, rupture validée à plus de 8 500 N.",
     tags: ["CATIA V5", "Éléments finis", "Fabrication additive"],
+    images: [
+      { src: placeholderPhoto, alt: "Pièce de sécurité 1" },
+      { src: placeholderPhoto, alt: "Pièce de sécurité 2" },
+    ],
   },
   {
     title: "Réparation d'une épée de voltige",
@@ -35,6 +47,10 @@ const projects: Project[] = [
     description:
       "Remise en service d'une épée : modélisation numérique, usinage de la tige de renfort et rivets en acier, emmanchement au dixième de mm. Confection du manche : noyau mousse Airex, résine chargée, stratification composite verre/polyester, ponçage et peinture finale.",
     tags: ["Usinage", "Composite", "Modélisation"],
+    images: [
+      { src: placeholderPhoto, alt: "Épée 1" },
+      { src: placeholderPhoto, alt: "Épée 2" },
+    ],
   },
   {
     title: "nutr. – Application nutrition sportive",
@@ -43,6 +59,10 @@ const projects: Project[] = [
     description:
       "Application née d'un constat vécu : aucun outil ne propose un accompagnement nutritionnel personnalisé et connecté à la pratique sportive. Cahier des charges fonctionnel, étude de marché, Design System. Collaboration avec des étudiants de GEA.",
     tags: ["Entrepreneuriat", "UX/UI", "Nutrition"],
+    images: [
+      { src: placeholderPhoto, alt: "nutr. app 1" },
+      { src: placeholderPhoto, alt: "nutr. app 2" },
+    ],
   },
 ];
 
@@ -93,7 +113,7 @@ const ProjectsSection = () => {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Modal with Carousel + Text */}
       <AnimatePresence>
         {selected && (
           <motion.div
@@ -108,35 +128,48 @@ const ProjectsSection = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.3 }}
-              className="bg-card rounded-2xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto card-shadow"
+              className="bg-card rounded-2xl overflow-hidden max-w-4xl w-full max-h-[85vh] overflow-y-auto card-shadow"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex justify-between items-start mb-4">
-                <span className="text-xs font-semibold text-primary tracking-wide uppercase">
-                  {selected.category}
-                </span>
-                <button
-                  onClick={() => setSelected(null)}
-                  className="w-8 h-8 rounded-full bg-muted flex items-center justify-center hover:bg-muted/80 transition-colors"
-                >
-                  <X className="w-4 h-4 text-muted-foreground" />
-                </button>
-              </div>
-              <h3 className="font-display font-bold text-2xl text-foreground mb-4">
-                {selected.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                {selected.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {selected.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="flex flex-col md:flex-row">
+                {/* Carousel left */}
+                <div className="md:w-1/2">
+                  <ImageCarousel
+                    images={selected.images}
+                    className="h-64 md:h-full md:min-h-[400px]"
+                  />
+                </div>
+
+                {/* Text right */}
+                <div className="md:w-1/2 p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <span className="text-xs font-semibold text-primary tracking-wide uppercase">
+                      {selected.category}
+                    </span>
+                    <button
+                      onClick={() => setSelected(null)}
+                      className="w-8 h-8 rounded-full bg-muted flex items-center justify-center hover:bg-muted/80 transition-colors"
+                    >
+                      <X className="w-4 h-4 text-muted-foreground" />
+                    </button>
+                  </div>
+                  <h3 className="font-display font-bold text-2xl text-foreground mb-4">
+                    {selected.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    {selected.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {selected.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </motion.div>
           </motion.div>
