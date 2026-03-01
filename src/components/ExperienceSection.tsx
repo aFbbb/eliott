@@ -68,14 +68,6 @@ const experiences: Experience[] = [
     details:
       "Le BUT Génie Mécanique et Productique de l'IUT de Brest offre une formation complète couvrant la conception mécanique (CATIA V5, 3DExperience), la simulation par éléments finis (RDM7), le choix des matériaux (CES Edupack), les procédés de fabrication (usinage, fonderie, composite) et la gestion de production (FlexSim). La 3ème année en alternance chez Naval Group me permet d'appliquer directement mes compétences théoriques dans un contexte industriel de pointe.",
   },
-  {
-    icon: GraduationCap,
-    title: "DUE– IAE de Brest",
-    subtitle: "Diplôme Universitaire d'Entrepreneuriat",
-    period: "2025 – 2026",
-    description:
-      "Formation post-bac en marketing, finances, gestion d'entreprises afin d'acquérir des connaissances & compétences basiques pour la création ou la reprise d'entreprise.",
-  },
 ];
 
 const ExperienceSection = () => {
