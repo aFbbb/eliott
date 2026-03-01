@@ -26,7 +26,8 @@ const AboutSection = () => (
           depuis septembre 2024. Curieux et pragmatique, j'aime comprendre comment fonctionnent les systèmes
           pour mieux les faire évoluer. En dehors de mes études et de mon apprentissage, je suis passionné de
           sport : que ce soit sur l'eau, à pied ou à vélo, en équipe ou seul, je relève chaque défi avec
-          motivation, détermination et rigueur.
+          motivation, détermination et rigueur. <br></br><br></br>
+          Parcourez ce site pour découvrir mes projets, mes réalisations et les expériences qui façonnent mon profil. 
         </p>
       </SectionReveal>
     </div>
