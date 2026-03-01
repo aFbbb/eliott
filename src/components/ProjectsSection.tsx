@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import type { ReactNode } from "react";
 import { X } from "lucide-react";
 import SectionReveal from "./SectionReveal";
 import ImageCarousel from "./ImageCarousel";
@@ -9,7 +10,7 @@ interface Project {
   title: string;
   category: string;
   summary: string;
-  description: string;
+  description: ReactNode ;
   tags: string[];
   images: { src: string; alt?: string }[];
 }
@@ -70,24 +71,42 @@ const projects: Project[] = [
   },
   {
     title: "nutr. – Application nutrition sportive",
-    category: "Extra-scolaire",
-    summary: "Projet entrepreneurial d'application mobile pour optimiser la nutrition chez les sportifs.",
-    description:
-      `<strong>Contexte :</strong><br />` +
-      `est un projet personnel d'application mobile que je développe depuis 2024. Il est né d'un constat vécu en tant que sportif : malgré une multitude d'applications existantes, aucune ne propose un accompagnement nutritionnel personnalisé, pédagogique et réellement connecté à la pratique sportive.<br /><br />` +
-      `<strong>Objectif du projet :</strong><br />` +
-      `Créer un outil intelligent, bienveillant et structurant pour aider les sportifs (de tous niveaux) à :<br /><br />` +
-      `• Adapter leur alimentation à leur activité, leurs objectifs et leur rythme de vie<br />` +
-      `• Comprendre les effets de la nutrition sur leurs performances, leur récupération et leurs sensations<br /><br />` +
-      `<strong>Avancement :</strong><br /><br />` +
-      `• Rédaction du cahier des charges fonctionnel<br />` +
-      `• Collaboration avec des étudiants de GEA<br />` +
-      `• Réalisation d'une étude de marché<br />` +
-      `• Création d'un Design System`,
-    tags: ["Entrepreneuriat", "UX/UI", "Nutrition"],
-    images: [
-      { src: placeholderPhoto, alt: "nutr. app 1" },
-      { src: placeholderPhoto, alt: "nutr. app 2" },
+  category: "Extra-scolaire",
+  summary: "Projet entrepreneurial d'application mobile pour optimiser la nutrition chez les sportifs.",
+  description: (
+    <>
+      <strong>Contexte :</strong><br />
+      <a
+        href="https://www.nutr.fr"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary font-semibold hover:underline"
+      >
+        nutr.
+      </a>{" "}
+      est un projet personnel d'application mobile que je développe depuis 2024. Il est né d'un constat vécu en tant
+      que sportif : malgré une multitude d'applications existantes, aucune ne propose un accompagnement nutritionnel
+      personnalisé, pédagogique et réellement connecté à la pratique sportive.
+      <br /><br />
+
+      <strong>Objectif du projet :</strong><br />
+      Créer un outil intelligent, bienveillant et structurant pour aider les sportifs (de tous niveaux) à :
+      <br /><br />
+      • Adapter leur alimentation à leur activité, leurs objectifs et leur rythme de vie<br />
+      • Comprendre les effets de la nutrition sur leurs performances, leur récupération et leurs sensations
+      <br /><br />
+
+      <strong>Avancement :</strong><br /><br />
+      • Rédaction du cahier des charges fonctionnel<br />
+      • Collaboration avec des étudiants de GEA<br />
+      • Réalisation d'une étude de marché<br />
+      • Création d'un Design System
+    </>
+  ),
+  tags: ["Entrepreneuriat", "UX/UI", "Nutrition"],
+  images: [
+    { src: placeholderPhoto, alt: "nutr. app 1" },
+    { src: placeholderPhoto, alt: "nutr. app 2" },
     ],
   },
 ];
