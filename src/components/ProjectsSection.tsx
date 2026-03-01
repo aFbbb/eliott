@@ -10,7 +10,7 @@ interface Project {
   title: string;
   category: string;
   summary: string;
-  description: ReactNode ;
+  description: string | ReactNode ;
   tags: string[];
   images: { src: string; alt?: string }[];
 }
