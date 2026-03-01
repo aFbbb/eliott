@@ -74,7 +74,6 @@ const projects: Project[] = [
     summary: "Projet entrepreneurial d'application mobile pour optimiser la nutrition chez les sportifs.",
     description:
       `<strong>Contexte :</strong><br />` +
-      <a href="https://www.nutr.fr" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">nutr.</a>+
       `est un projet personnel d'application mobile que je développe depuis 2024. Il est né d'un constat vécu en tant que sportif : malgré une multitude d'applications existantes, aucune ne propose un accompagnement nutritionnel personnalisé, pédagogique et réellement connecté à la pratique sportive.<br /><br />` +
       `<strong>Objectif du projet :</strong><br />` +
       `Créer un outil intelligent, bienveillant et structurant pour aider les sportifs (de tous niveaux) à :<br /><br />` +
