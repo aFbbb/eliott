@@ -1,4 +1,4 @@
-import { Linkedin } from "lucide-react";
+import { Linkedin, FileDown } from "lucide-react";
 
 const Footer = () => (
   <footer className="bg-navy py-10">
@@ -6,15 +6,25 @@ const Footer = () => (
       <p className="text-sm text-primary-foreground/60 font-body">
         © 2025–2026 Eliott Legru. Tous droits réservés.
       </p>
-      <a
-        href="https://www.linkedin.com/in/eliott-legru-60b75b2b8/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
-      >
-        <Linkedin className="w-4 h-4" />
-        LinkedIn
-      </a>
+      <div className="flex items-center gap-6">
+        <a
+          href="/cv-eliott-legru.pdf"
+          download
+          className="flex items-center gap-2 text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+        >
+          <FileDown className="w-4 h-4" />
+          Télécharger mon CV
+        </a>
+        <a
+          href="https://www.linkedin.com/in/eliott-legru-60b75b2b8/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+        >
+          <Linkedin className="w-4 h-4" />
+          LinkedIn
+        </a>
+      </div>
     </div>
   </footer>
 );
