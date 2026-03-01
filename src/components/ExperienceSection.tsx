@@ -41,7 +41,7 @@ const experiences: Experience[] = [
     description:
       "Découverte de la fabrication de catamarans de luxe : composite (drapage, infusion), avant-pontage, après-pontage. Exploration des différents métiers acteurs de la fabrication de ces bateaux.",
     details:
-      "Fountaine Pajot est une entreprise française, fondée en 1976, spécialisée dans la construction de catamarans de luxe, employant plus de 800 personnes sur trois sites de production (Aigrefeuille-d’Aunis, La Rochelle, Le Thou) et réalisant 277 M€ de chiffre d’affaires en 2023 (croissance de 26 % vs 2022).+
+      "Fountaine Pajot est une entreprise française, fondée en 1976, spécialisée dans la construction de catamarans de luxe, employant plus de 800 personnes sur trois sites de production (Aigrefeuille-d’Aunis, La Rochelle, Le Thou) et réalisant 277 M€ de chiffre d’affaires en 2023 (croissance de 26 % vs 2022)."+
 "Durant trois semaines au sein de l’atelier d’Aigrefeuille-d’Aunis, j’ai découvert les principales étapes de fabrication d’un catamaran :"+
 "Composite (drapage, infusion/injection, entretien de moules),"+
 ""+
