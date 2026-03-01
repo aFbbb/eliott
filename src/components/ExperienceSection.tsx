@@ -21,8 +21,16 @@ const experiences: Experience[] = [
     period: "Sept. 2024 – Présent",
     description:
       "Modélisation 3D de structures navales, calculs de dimensionnement, coordination interservices, revues de conception et suivi documentaire pour la construction de navires de guerre et sous-marins.",
-    details:
-      "Au sein de Naval Group, je travaille sur la modélisation 3D de structures navales complexes en utilisant 3DExperience. Mon rôle d'intégrateur-projeteur consiste à coordonner les interfaces entre les différents services (structure, tuyauterie, ventilation) afin de garantir la cohérence du modèle numérique global. Je participe activement aux revues de conception, au suivi documentaire et aux calculs de dimensionnement des structures. Cette expérience m'a permis de développer une forte capacité d'adaptation et de rigueur dans un environnement industriel exigeant.",
+     details:
+      "Naval Group est le spécialiste français de la construction et de la maintenance de navires de guerre et de sous-marins depuis plus de trois siècles. Forte d’une expertise reconnue à l’international, l’entreprise s'inscrit parmi les leaders mondiaux alliant rigueur technique et exigence qualité.<br /><br />" +
+      "Depuis septembre 2024, j’évolue chez Naval Group en tant qu’Intégrateur-Projeteur en alternance. Mon rôle :<br /><br />" +
+      "- <strong>Modélisation 3D</strong> :<br />Créer et mettre à jour les maquettes numériques des structures navales en respectant les spécifications techniques.<br /><br />" +
+      "- <strong>Analyse de résistance</strong> :<br />Réaliser des calculs de dimensionnement pour vérifier le comportement des pièces et anticiper les contraintes en conditions réelles.<br /><br />" +
+      "- <strong>Coordination interservices</strong> :<br />Travailler avec les experts métiers pour garantir la cohérence et la robustesse de l’ensemble des systèmes.<br /><br />" +
+      "- <strong>Veille technique et innovation</strong> :<br />Surveiller les évolutions des matériaux et des procédés de fabrication, et proposer des améliorations concrètes pour optimiser les performances et la sécurité des navires.<br /><br />" +
+      "- <strong>Revues de conception</strong> :<br />Présenter des maquettes et des résultats d’analyse, recueillir les retours de l’équipe et ajuster les dossiers de définition pour aboutir à une solution validée.<br /><br />" +
+      "- <strong>Suivi documentaire et conformité</strong> :<br />Mettre à jour les plans et les rapports d’analyse, en assurant la traçabilité et la qualité des livrables destinés aux phases de fabrication et de maintenance.<br /><br />" +
+      "Chacune de ces missions me permet de renforcer ma rigueur, d’enrichir mes compétences techniques et de contribuer de façon concrète aux projets de Naval Group.",
     confidential: true,
   },
   {
@@ -31,9 +39,24 @@ const experiences: Experience[] = [
     subtitle: "Stage de 1ère année",
     period: "2023 · 3 semaines",
     description:
-      "Découverte de la fabrication de catamarans de luxe : composite (drapage, infusion), avant-pontage, après-pontage. Exploration des métiers de stratification et d'accastillage.",
+      "Découverte de la fabrication de catamarans de luxe : composite (drapage, infusion), avant-pontage, après-pontage. Exploration des différents métiers acteurs de la fabrication de ces bateaux.",
     details:
-      "Stage immersif chez Fountaine Pajot, l'un des leaders mondiaux de la construction de catamarans. J'ai pu observer et participer aux différentes étapes de fabrication : drapage et infusion des pièces composites, assemblage de l'avant-pontage et de l'après-pontage, travaux d'accastillage et de finition. Cette expérience m'a offert une vision concrète de la production industrielle nautique haut de gamme et m'a conforté dans mon attrait pour le secteur naval.",
+      "Fountaine Pajot est une entreprise française, fondée en 1976, spécialisée dans la construction de catamarans de luxe, employant plus de 800 personnes sur trois sites de production (Aigrefeuille-d’Aunis, La Rochelle, Le Thou) et réalisant 277 M€ de chiffre d’affaires en 2023 (croissance de 26 % vs 2022).+
+"Durant trois semaines au sein de l’atelier d’Aigrefeuille-d’Aunis, j’ai découvert les principales étapes de fabrication d’un catamaran :"+
+"Composite (drapage, infusion/injection, entretien de moules),"+
+""+
+"Avant-pontage (assemblage de modules, passage de câbles et tuyaux),"+
+""+
+"Après-pontage (connexions finales, installation des aménagements)."+
+"J’ai particulièrement exploré les métiers de stratification et d’accastillage, alternant entre drapage, collage de bandes structurelles et pose d’équipements de sécurité et de confort."+
+"L’accueil et le tutorat ont grandement facilité mon intégration aux deux équipes (matin et après-midi) : j’ai pu poser toutes mes questions, gagner en autonomie et comprendre rapidement les exigences de chaque poste. J’ai apprécié l’esprit d’équipe, la propreté rigoureuse des lieux et la sensibilisation aux normes (zone ATEX, EPI obligatoires)."+
+"Ce stage m’a permis :"+
+""+
+"- D’appliquer des gestes techniques concrets et de maîtriser de nouveaux procédés métiers,"+
+""+
+"- De développer mon sens de l’organisation et du travail collaboratif,"+
+""+
+"- Et de confirmer mon intérêt pour l’industrie navale, même si la distance géographique ne m’oriente pas vers une alternance ultérieure chez Fountaine Pajot.",
   },
   {
     icon: GraduationCap,
@@ -44,6 +67,14 @@ const experiences: Experience[] = [
       "Formation bac+3 en conception mécanique, simulation, matériaux, procédés de fabrication et gestion de production. 3ème année en alternance chez Naval Group.",
     details:
       "Le BUT Génie Mécanique et Productique de l'IUT de Brest offre une formation complète couvrant la conception mécanique (CATIA V5, 3DExperience), la simulation par éléments finis (RDM7), le choix des matériaux (CES Edupack), les procédés de fabrication (usinage, fonderie, composite) et la gestion de production (FlexSim). La 3ème année en alternance chez Naval Group me permet d'appliquer directement mes compétences théoriques dans un contexte industriel de pointe.",
+  },
+  {
+    icon: GraduationCap,
+    title: "DUE– IAE de Brest",
+    subtitle: "Diplôme Universitaire d'Entrepreneuriat",
+    period: "2025 – 2026",
+    description:
+      "Formation post-bac en marketing, finances, gestion d'entreprises afin d'acquérir des connaissances & compétences basiques pour la création ou la reprise d'entreprise.",
   },
 ];
 
