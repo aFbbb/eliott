@@ -20,6 +20,26 @@ type Project = {
 };
 
 import placeholderPhoto from "../assets/placeholder-photo.jpg";
+import GA1 from "../assets/p1/GA1.png";
+import bateau from "../assets/p1/bateau.png";
+import coupe from "../assets/p1/coupe.png"
+import exp from "../assets/p1/img3dx.png";
+
+import opti from "../assets/p2/opt1.png";
+import pb1 from "../assets/p2/pb1.png";
+import pb2 from "../assets/p2/pb2.png";
+import pb3 from "../assets/p2/pb3.png";
+import analyse from "../assets/p2/pb3_analyse.png";
+
+import ph1 from "../assets/p3/ph1sae31.jpg";
+import ph2 from "../assets/p3/ph2sae31.jpg";
+import ph3 from "../assets/p3/ph3sae31.jpg";
+import ph4 from "../assets/p3/ph4sae31.jpg";
+import ph5 from "../assets/p3/ph5sae31.jpg";
+import ph6 from "../assets/p3/ph6sae31.jpg";
+import ph7 from "../assets/p3/ph7sae31.jpg";
+
+import logo_nutr from "../assets/p4/logo_nutr1.png";
 
 const projects: Project[] = [
   {
