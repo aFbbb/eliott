@@ -13,6 +13,10 @@ interface InterestItem {
   video?: string; // optional portrait video for modal
 }
 
+//import bateau from "../assets/vid1.mp4";
+//import voyage from "../assets/vid2.mp4";
+//import velo from "../assets/vid3.mov";
+
 const interests: InterestItem[] = [
   {
     icon: Sailboat,
@@ -36,7 +40,9 @@ const interests: InterestItem[] = [
     description:
       "Vélo, trail, randonnée — j'explore les plus beaux endroits à pied ou à vélo. Finisher du BRUT 2025 (20 km), boucle du Sancy en solo.",
     teaser: placeholderPhoto,
-    video: undefined,
+    video: [
+      { src : velo },
+      ],
   },
 ];
 
