@@ -12,17 +12,24 @@ import podium from "@/assets/carousel/podium.JPG";
 import rando from "@/assets/carousel/rando.jpg";
 import worlds from "@/assets/carousel/worlds.jpg";
 
-interface Slide {
-  src: string;
+type CarouselImage = {
+  src: string ;
+  alt: string ; 
+};
+
+type Slide {
+  images?: CarouselImage[];
   title: string;
   subtitle: string;
 }
 
 const slides: Slide[] = [
   {
-    src: worlds,
     title: "Championnats du Monde – Barcelone",
     subtitle: "Nacra 15 · Compétition internationale en catamaran",
+    images: [
+      { src: worlds, alt:"Championnats du Monde à Barcelone" },
+      ],
   },
   {
     src: podium,
@@ -45,13 +52,22 @@ const slides: Slide[] = [
     subtitle: "Randonnée solo dans les volcans d'Auvergne",
   },
 ];
+function PhotoCarouselSection({ images = [] }: { images?: ProjectImage[] }) {
+  const [index, setIndex] = useState(0);
 
-const PhotoCarouselSection = () => {
-  const [current, setCurrent] = useState(0);
-
+  const hasMany = images.length > 1;
+  const safeIndex = images.length ? Math.min(index, images.length - 1) : 0;
+  
   const prev = () => setCurrent((c) => (c === 0 ? slides.length - 1 : c - 1));
   const next = () => setCurrent((c) => (c === slides.length - 1 ? 0 : c + 1));
-
+  
+  if (!images.length) {
+    return (
+      <div className="h-full w-full bg-muted rounded-2xl flex items-center justify-center text-muted-foreground">
+        Aucune image
+      </div>
+    );
+  }
   return (
     <section className="py-24 bg-background">
       <div className="max-w-6xl mx-auto px-6">
