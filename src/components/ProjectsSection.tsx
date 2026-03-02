@@ -40,6 +40,7 @@ import ph6 from "../assets/p3/ph6sae31.jpg";
 import ph7 from "../assets/p3/ph7sae31.jpg";
 
 import logo_nutr from "../assets/p4/logo_nutr1.png";
+import mockup from "../assets/p4/mockup.png";
 
 const projects: Project[] = [
   {
@@ -179,7 +180,7 @@ const projects: Project[] = [
     tags: ["Entrepreneuriat", "UX/UI", "Nutrition"],
     images: [
       { src: logo_nutr, alt: "nutr. app 1" },
-      { src: placeholderPhoto, alt: "nutr. app 2" },
+      { src: mockup, alt: "nutr. app 2" },
     ],
   },
 ];
