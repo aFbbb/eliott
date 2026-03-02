@@ -1,59 +1,47 @@
 import { useState } from "react";
-import { Sailboat, Bike, Plane, Camera } from "lucide-react";
+import { Sailboat, Bike, Plane } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, Play } from "lucide-react";
 import SectionReveal from "./SectionReveal";
-import ImageCarousel from "./ImageCarousel";
 import placeholderPhoto from "@/assets/placeholder-photo.jpg";
 
-const interests = [
+interface InterestItem {
+  icon: typeof Sailboat;
+  title: string;
+  description: string;
+  teaser: string; // image for the card
+  video?: string; // optional portrait video for modal
+}
+
+const interests: InterestItem[] = [
   {
     icon: Sailboat,
     title: "Voile",
     description:
       "10 ans de voile dont 3 ans de Nacra 15 au niveau international. 3ème au National Jeunes de La Rochelle, participation aux Championnats du Monde à Barcelone.",
-    images: [
-      { src: placeholderPhoto, alt: "Voile 1" },
-      { src: placeholderPhoto, alt: "Voile 2" },
-      { src: placeholderPhoto, alt: "Voile 3" },
-    ],
+    teaser: placeholderPhoto,
+    video: undefined, // remplacer par le chemin de ta vidéo portrait
   },
   {
     icon: Plane,
     title: "Voyage & Photo",
     description:
       "Europe, Antilles, Vanuatu… Depuis petit, je voyage et capture les meilleurs moments à travers l'objectif.",
-    images: [
-      { src: placeholderPhoto, alt: "Voyage 1" },
-      { src: placeholderPhoto, alt: "Voyage 2" },
-      { src: placeholderPhoto, alt: "Voyage 3" },
-    ],
+    teaser: placeholderPhoto,
+    video: undefined,
   },
   {
     icon: Bike,
     title: "Sport & Nature",
     description:
       "Vélo, trail, randonnée — j'explore les plus beaux endroits à pied ou à vélo. Finisher du BRUT 2025 (20 km), boucle du Sancy en solo.",
-    images: [
-      { src: placeholderPhoto, alt: "Sport 1" },
-      { src: placeholderPhoto, alt: "Sport 2" },
-    ],
-  },
-  {
-    icon: Camera,
-    title: "Photographie",
-    description:
-      "Passionné de photographie, je capture les paysages, la mer et les moments de vie à travers mon objectif. Chaque cliché raconte une histoire.",
-    images: [
-      { src: placeholderPhoto, alt: "Photo 1" },
-      { src: placeholderPhoto, alt: "Photo 2" },
-      { src: placeholderPhoto, alt: "Photo 3" },
-    ],
+    teaser: placeholderPhoto,
+    video: undefined,
   },
 ];
 
 const InterestsSection = () => {
-  const [selected, setSelected] = useState<(typeof interests)[0] | null>(null);
+  const [selected, setSelected] = useState<InterestItem | null>(null);
 
   return (
     <section id="interests" className="py-24 bg-muted/50">
@@ -67,7 +55,7 @@ const InterestsSection = () => {
           </h2>
         </SectionReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {interests.map((item, i) => {
             const Icon = item.icon;
             return (
@@ -76,13 +64,20 @@ const InterestsSection = () => {
                   onClick={() => setSelected(item)}
                   className="w-full bg-card rounded-xl overflow-hidden card-shadow hover:card-shadow-hover transition-all duration-300 hover:-translate-y-1 group text-left"
                 >
-                  {/* Preview image */}
-                  <div className="h-40 overflow-hidden">
+                  {/* Teaser image */}
+                  <div className="h-48 overflow-hidden relative">
                     <img
-                      src={item.images[0].src}
+                      src={item.teaser}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
+                    {item.video && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-foreground/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="w-12 h-12 rounded-full bg-primary/90 flex items-center justify-center">
+                          <Play className="w-5 h-5 text-primary-foreground ml-0.5" />
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div className="p-5 text-center">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors">
@@ -102,7 +97,7 @@ const InterestsSection = () => {
         </div>
       </div>
 
-      {/* Photo Gallery Modal */}
+      {/* Modal with portrait video */}
       <AnimatePresence>
         {selected && (
           <motion.div
@@ -117,31 +112,46 @@ const InterestsSection = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.3 }}
-              className="bg-card rounded-2xl overflow-hidden max-w-3xl w-full max-h-[85vh] overflow-y-auto card-shadow"
+              className="bg-card rounded-2xl overflow-hidden max-w-md w-full max-h-[90vh] flex flex-col card-shadow"
               onClick={(e) => e.stopPropagation()}
             >
-              <ImageCarousel
-                images={selected.images}
-                className="h-64 md:h-96"
-              />
-              <div className="p-8">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <selected.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <h3 className="font-display font-bold text-xl text-foreground">
-                      {selected.title}
-                    </h3>
+              {/* Portrait video or fallback image (9:16) */}
+              <div className="relative w-full" style={{ aspectRatio: "9/16", maxHeight: "65vh" }}>
+                {selected.video ? (
+                  <video
+                    src={selected.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover rounded-t-2xl"
+                  />
+                ) : (
+                  <img
+                    src={selected.teaser}
+                    alt={selected.title}
+                    className="w-full h-full object-cover rounded-t-2xl"
+                  />
+                )}
+                <button
+                  onClick={() => setSelected(null)}
+                  className="absolute top-3 right-3 w-8 h-8 rounded-full bg-foreground/30 backdrop-blur-sm flex items-center justify-center hover:bg-foreground/50 transition-colors"
+                >
+                  <X className="w-4 h-4 text-primary-foreground" />
+                </button>
+              </div>
+
+              {/* Scrollable text */}
+              <div className="p-6 overflow-y-auto">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <selected.icon className="w-4 h-4 text-primary" />
                   </div>
-                  <button
-                    onClick={() => setSelected(null)}
-                    className="w-8 h-8 rounded-full bg-muted flex items-center justify-center hover:bg-muted/80 transition-colors"
-                  >
-                    <X className="w-4 h-4 text-muted-foreground" />
-                  </button>
+                  <h3 className="font-display font-bold text-lg text-foreground">
+                    {selected.title}
+                  </h3>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {selected.description}
                 </p>
               </div>
