@@ -2,7 +2,15 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionReveal from "./SectionReveal";
+
 import placeholderPhoto from "@/assets/placeholder-photo.jpg";
+import auv from "@/assets/carousel/auvergne.jpg";
+import brut from "@/assets/carousel/brut.jpg";
+import bateau from "@/assets/carousel/imgbateau.JPG";
+import loctudy from "@/assets/carousel/loctudy.jpg";
+import podium from "@/assets/carousel/podium.JPG";
+import rando from "@/assets/carousel/rando.jpg";
+import worlds from "@/assets/carousel/worlds.jpg";
 
 interface Slide {
   src: string;
@@ -12,12 +20,12 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    src: placeholderPhoto,
+    src: worlds,
     title: "Championnats du Monde – Barcelone",
     subtitle: "Nacra 15 · Compétition internationale en catamaran",
   },
   {
-    src: placeholderPhoto,
+    src: podium,
     title: "National Jeunes – La Rochelle",
     subtitle: "3ème place · Une fierté après des mois de préparation",
   },
