@@ -86,7 +86,11 @@ const projects: Project[] = [
     ),
     tags: ["Dimensionnement", "CATIA", "Fabrication additive"],
     images: [
-      { src: placeholderPhoto, alt: "Pièce de sécurité" },
+      { src: pb1, alt: "Pièce de sécurité" },
+      { src: pb2, alt: "Pièce de sécurité" },
+      { src: pb3, alt: "Pièce de sécurité" },
+      { src: analyse, alt: "Pièce de sécurité" },
+      { src: opti, alt: "Pièce de sécurité" },
     ],
   },
   {
@@ -114,7 +118,13 @@ const projects: Project[] = [
     ),
     tags: ["Usinage", "Composite", "Fabrication"],
     images: [
-      { src: placeholderPhoto, alt: "Épée de voltige" },
+      { src: ph1, alt: "Modélisation CATIA de la réparation" },
+      { src: ph2, alt: "Fraisage de la pièce" },
+      { src: ph3, alt: "Assemblage à la presse hydraulique" },
+      { src: ph4, alt: "Rivetage à chaud" },
+      { src: ph5, alt: "Préparation composite" },
+      { src: ph6, alt: "Drapage et polymérisation" },
+      { src: ph7, alt: "Rendu final" },
     ],
   },
   {
@@ -168,7 +178,7 @@ const projects: Project[] = [
     ),
     tags: ["Entrepreneuriat", "UX/UI", "Nutrition"],
     images: [
-      { src: placeholderPhoto, alt: "nutr. app 1" },
+      { src: logo_nutr, alt: "nutr. app 1" },
       { src: placeholderPhoto, alt: "nutr. app 2" },
     ],
   },
