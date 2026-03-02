@@ -204,12 +204,14 @@ function ImageCarousel({ images = [] }: { images?: ProjectImage[] }) {
 
   return (
     <div className="relative h-full w-full overflow-hidden rounded-2xl md:rounded-none md:rounded-l-3xl">
-      <img
-        src={images[safeIndex].src}
-        alt={images[safeIndex].alt}
-        className="h-full w-full object-cover"
-        draggable={false}
-      />
+      <div className="h-full w-full bg-muted/50 flex items-center justify-center">
+        <img
+          src={images[safeIndex].src}
+          alt={images[safeIndex].alt}
+          className="h-full w-full object-contain"
+          draggable={false}
+        />
+      </div>
 
       {hasMany && (
         <>
