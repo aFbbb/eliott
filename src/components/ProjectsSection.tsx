@@ -170,7 +170,7 @@ function ImageCarousel({ images = [] }: { images?: ProjectImage[] }) {
   }
 
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-2xl">
+    <div className="relative h-full w-full overflow-hidden rounded-2xl md:rounded-none md:rounded-l-3xl">
       <img
         src={images[safeIndex].src}
         alt={images[safeIndex].alt}
@@ -284,16 +284,16 @@ export default function ProjectsSection() {
               transition={{ duration: 0.25 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 max-h-[90vh]">
-                {/* Left: images */}
-                <div className="p-5 md:p-6">
-                  <div className="aspect-[4/3] md:aspect-[5/4]">
+              <div className="flex flex-col md:flex-row max-h-[90vh]">
+                {/* Left: images – fills height */}
+                <div className="md:w-1/2 shrink-0">
+                  <div className="h-64 md:h-full">
                     <ImageCarousel images={selected.images} />
                   </div>
                 </div>
 
-                {/* Right: content */}
-                <div className="p-6 md:p-8 relative overflow-y-auto max-h-[70vh]">
+                {/* Right: content – scrolls independently */}
+                <div className="md:w-1/2 p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
                   <button
                     type="button"
                     onClick={() => setSelected(null)}
