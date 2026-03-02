@@ -17,10 +17,47 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Lovable" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <style>
+      #loader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: hsl(216 30% 96%);
+        transition: opacity 0.4s ease;
+      }
+      #loader .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid hsl(210 80% 45% / 0.2);
+        border-top-color: hsl(210 80% 45%);
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      @media (prefers-color-scheme: dark) {
+        #loader { background: hsl(220 30% 8%); }
+      }
+    </style>
   </head>
 
   <body>
+    <div id="loader"><div class="spinner"></div></div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      (function() {
+        function removeLoader() {
+          var loader = document.getElementById('loader');
+          if (!loader) return;
+          loader.style.opacity = '0';
+          setTimeout(function() { loader.remove(); }, 400);
+        }
+        if (document.readyState === 'complete') { removeLoader(); }
+        else { window.addEventListener('load', removeLoader); }
+      })();
+    </script>
   </body>
 </html>
