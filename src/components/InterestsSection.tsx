@@ -15,7 +15,7 @@ interface InterestItem {
 
 //import bateau from "../assets/vid1.mp4";
 //import voyage from "../assets/vid2.mp4";
-//import velo from "../assets/vid3.mov";
+import velo from "../assets/vid3.mov";
 
 const interests: InterestItem[] = [
   {
