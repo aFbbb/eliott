@@ -29,31 +29,46 @@ const slides: Slide[] = [
     subtitle: "Nacra 15 · Compétition internationale en catamaran",
     images: [
       { src: worlds, alt:"Championnats du Monde à Barcelone" },
-      ],
+    ],
   },
   {
-    src: podium,
     title: "National Jeunes – La Rochelle",
     subtitle: "3ème place · Une fierté après des mois de préparation",
+    images: [
+      { src: podium, alt:"Podium au National Jeunes 2024" },
+    ],
   },
   {
-    src: placeholderPhoto,
-    title: "Aventures en Vanuatu",
-    subtitle: "Découverte du Pacifique Sud et de ses paysages incroyables",
+    title: "Tour du lac de Guerlédan",
+    subtitle: "Découverte du Lac de Guerlédan au centre bretagne.",
+    images: [
+      { src: rando, alt:"Championnats du Monde à Barcelone" },
+    ],
   },
   {
-    src: placeholderPhoto,
     title: "BRUT 2025 – Trail 20 km",
     subtitle: "Finisher · Dépassement de soi en pleine nature",
+    images: [
+      { src: brut, alt:"Championnats du Monde à Barcelone" },
+    ],
   },
   {
-    src: placeholderPhoto,
     title: "Boucle du Sancy",
     subtitle: "Randonnée solo dans les volcans d'Auvergne",
+    images: [
+      { src: auv, alt:"Championnats du Monde à Barcelone" },
+    ],
+  },
+  {
+    title: "Envoi de spi à Loctudy",
+    subtitle: "Envoi de spi en tête de course",
+    images: [
+      { src: loctudy, alt:"Championnats du Monde à Barcelone" },
+    ],
   },
 ];
 function PhotoCarouselSection({ images = [] }: { images?: ProjectImage[] }) {
-  const [index, setIndex] = useState(0);
+  const [current, setCurrent] = useState(0);
 
   const hasMany = images.length > 1;
   const safeIndex = images.length ? Math.min(index, images.length - 1) : 0;
