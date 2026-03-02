@@ -65,7 +65,10 @@ const projects: Project[] = [
     ),
     tags: ["Conception", "3DExperience", "Naval"],
     images: [
-      { src: placeholderPhoto, alt: "Navire de recherche" },
+      { src: bateau, alt: "Navire de recherche" },
+      { src: exp, alt: "Navire de recherche" },
+      { src: GA1, alt: "Navire de recherche" },
+      { src: coupe, alt: "Vue en Coupe de la structure" },
     ],
   },
   {
