@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Sailboat, Bike, Plane } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Play } from "lucide-react";
 import SectionReveal from "./SectionReveal";
-import placeholderPhoto from "@/assets/placeholder-photo.jpg";
 
 interface InterestItem {
   icon: typeof Sailboat;
@@ -13,8 +12,6 @@ interface InterestItem {
   video?: string; // optional portrait video for modal
 }
 
-//import bateau from "../assets/vid1.mp4";
-//import voyage from "../assets/vid2.mp4";
 import bateauImg from "../assets/CI/bateau.jpg";
 import veloImg from "../assets/CI/velo.jpg";
 import voyageImg from "../assets/CI/voyage.jpg";
@@ -51,6 +48,11 @@ const interests: InterestItem[] = [
 
 const InterestsSection = () => {
   const [selected, setSelected] = useState<InterestItem | null>(null);
+  const [videoError, setVideoError] = useState(false);
+
+  useEffect(() => {
+    setVideoError(false);
+  }, [selected]);
 
   return (
     <section id="interests" className="py-24 bg-muted/50">
@@ -73,7 +75,6 @@ const InterestsSection = () => {
                   onClick={() => setSelected(item)}
                   className="w-full bg-card rounded-xl overflow-hidden card-shadow hover:card-shadow-hover transition-all duration-300 hover:-translate-y-1 group text-left"
                 >
-                  {/* Teaser image */}
                   <div className="h-48 overflow-hidden relative">
                     <img
                       src={item.teaser}
@@ -106,7 +107,6 @@ const InterestsSection = () => {
         </div>
       </div>
 
-      {/* Modal with portrait video */}
       <AnimatePresence>
         {selected && (
           <motion.div
@@ -124,15 +124,18 @@ const InterestsSection = () => {
               className="bg-card rounded-2xl overflow-hidden max-w-md w-full max-h-[90vh] flex flex-col card-shadow"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Portrait video or fallback image (9:16) */}
               <div className="relative w-full" style={{ aspectRatio: "9/16", maxHeight: "65vh" }}>
-                {selected.video ? (
+                {selected.video && !videoError ? (
                   <video
                     src={selected.video}
                     autoPlay
                     loop
                     muted
+                    controls
+                    preload="metadata"
                     playsInline
+                    poster={selected.teaser}
+                    onError={() => setVideoError(true)}
                     className="w-full h-full object-cover rounded-t-2xl"
                   />
                 ) : (
@@ -150,7 +153,6 @@ const InterestsSection = () => {
                 </button>
               </div>
 
-              {/* Scrollable text */}
               <div className="p-6 overflow-y-auto">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
