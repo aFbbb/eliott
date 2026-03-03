@@ -30,7 +30,7 @@ const interests: InterestItem[] = [
   },
   {
     icon: Plane,
-    title: "Voyage & Photo",
+    title: "Voyages",
     description:
       "Europe, Antilles, Vanuatu… Depuis petit, je voyage et capture les meilleurs moments à travers l'objectif.",
     teaser: voyageImg,
@@ -40,7 +40,7 @@ const interests: InterestItem[] = [
     icon: Bike,
     title: "Sport & Nature",
     description:
-      "Vélo, trail, randonnée — j'explore les plus beaux endroits à pied ou à vélo. Finisher du BRUT 2025 (20 km), boucle du Sancy en solo.",
+      "Vélo, trail, randonnée — j'explore les plus beaux endroits. Finisher de la boucle du Sancy en solo en hiver et pleins d'autres projets en vue...",
     teaser: veloImg,
     video: vid3,
   },
