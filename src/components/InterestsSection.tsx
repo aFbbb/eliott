@@ -15,7 +15,12 @@ interface InterestItem {
 
 //import bateau from "../assets/vid1.mp4";
 //import voyage from "../assets/vid2.mp4";
-import velo from "../assets/vid3.mov";
+import bateauImg from "../assets/CI/bateau.jpg";
+import veloImg from "../assets/CI/velo.jpg";
+import voyageImg from "../assets/CI/voyage.jpg";
+import vid1 from "../assets/vid1.mp4";
+import vid2 from "../assets/vid2.mp4";
+import vid3 from "../assets/vid3.mov";
 
 const interests: InterestItem[] = [
   {
@@ -23,26 +28,24 @@ const interests: InterestItem[] = [
     title: "Voile",
     description:
       "10 ans de voile dont 3 ans de Nacra 15 au niveau international. 3ème au National Jeunes de La Rochelle, participation aux Championnats du Monde à Barcelone.",
-    teaser: placeholderPhoto,
-    video: undefined, // remplacer par le chemin de ta vidéo portrait
+    teaser: bateauImg,
+    video: vid1,
   },
   {
     icon: Plane,
     title: "Voyage & Photo",
     description:
       "Europe, Antilles, Vanuatu… Depuis petit, je voyage et capture les meilleurs moments à travers l'objectif.",
-    teaser: placeholderPhoto,
-    video: undefined,
+    teaser: voyageImg,
+    video: vid2,
   },
   {
     icon: Bike,
     title: "Sport & Nature",
     description:
       "Vélo, trail, randonnée — j'explore les plus beaux endroits à pied ou à vélo. Finisher du BRUT 2025 (20 km), boucle du Sancy en solo.",
-    teaser: placeholderPhoto,
-    video: [
-      { src : velo },
-      ],
+    teaser: veloImg,
+    video: vid3,
   },
 ];
 

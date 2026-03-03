@@ -17,8 +17,8 @@ type CarouselImage = {
   alt: string ; 
 };
 
-type Slide {
-  images?: CarouselImage[];
+type Slide = {
+  images: CarouselImage[];
   title: string;
   subtitle: string;
 }
@@ -67,22 +67,11 @@ const slides: Slide[] = [
     ],
   },
 ];
-function PhotoCarouselSection({ images = [] }: { images?: ProjectImage[] }) {
+function PhotoCarouselSection() {
   const [current, setCurrent] = useState(0);
 
-  const hasMany = images.length > 1;
-  const safeIndex = images.length ? Math.min(index, images.length - 1) : 0;
-  
   const prev = () => setCurrent((c) => (c === 0 ? slides.length - 1 : c - 1));
   const next = () => setCurrent((c) => (c === slides.length - 1 ? 0 : c + 1));
-  
-  if (!images.length) {
-    return (
-      <div className="h-full w-full bg-muted rounded-2xl flex items-center justify-center text-muted-foreground">
-        Aucune image
-      </div>
-    );
-  }
   return (
     <section className="py-24 bg-background">
       <div className="max-w-6xl mx-auto px-6">
@@ -101,8 +90,8 @@ function PhotoCarouselSection({ images = [] }: { images?: ProjectImage[] }) {
             <AnimatePresence mode="wait">
               <motion.img
                 key={current}
-                src={slides[current].src}
-                alt={slides[current].title}
+                src={slides[current].images[0]?.src}
+                alt={slides[current].images[0]?.alt || slides[current].title}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
