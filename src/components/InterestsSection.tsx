@@ -40,7 +40,7 @@ const interests: InterestItem[] = [
     icon: Bike,
     title: "Sport & Nature",
     description:
-      "Vélo, trail, randonnée — j'explore les plus beaux endroits. Finisher de la boucle du Sancy en solo en hiver et pleins d'autres projets en vue...",
+      "Vélo, trail, randonnée... j'explore les plus beaux endroits. Finisher de la boucle du Sancy en solo en hiver et pleins d'autres projets en vue...",
     teaser: veloImg,
     video: vid3,
   },
