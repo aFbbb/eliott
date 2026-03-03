@@ -15,8 +15,8 @@ interface InterestItem {
 import bateauImg from "../assets/CI/bateau.jpg";
 import veloImg from "../assets/CI/velo.jpg";
 import voyageImg from "../assets/CI/voyage.jpg";
-import vid1 from "../assets/vid1.mp4";
-import vid2 from "../assets/vid2.mp4";
+import vid1 from "../assets/vid1.mov";
+import vid2 from "../assets/vid2.mov";
 import vid3 from "../assets/vid3.mov";
 
 const interests: InterestItem[] = [
