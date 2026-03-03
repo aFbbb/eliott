@@ -7,10 +7,10 @@ import placeholderPhoto from "@/assets/placeholder-photo.jpg";
 import auv from "@/assets/carousel/auvergne.jpg";
 import brut from "@/assets/carousel/brut.jpg";
 import bateau from "@/assets/carousel/imgbateau.JPG";
-import loctudy from "@/assets/carousel/loctudy.jpg";
+import loctudy from "@/assets/carousel/loctudy.JPG";
 import podium from "@/assets/carousel/podium.JPG";
 import rando from "@/assets/carousel/rando.jpg";
-import worlds from "@/assets/carousel/worlds.jpg";
+import worlds from "@/assets/carousel/worlds.JPG";
 
 type CarouselImage = {
   src: string ;
